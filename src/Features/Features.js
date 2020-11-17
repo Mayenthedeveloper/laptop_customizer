@@ -1,12 +1,13 @@
 import React from "react";
 import slugify from 'slugify';
 import FeatureOption from '../FeatureOption/FeatureOption';
+import FEATURES from '../FEATURES';
 
 function Features(props){
     
-    const features = Object.keys(props.features).map((feature, idx) => {
+    const features = Object.keys(FEATURES).map((feature, idx) => {
         const featureHash = feature + '-' + idx;
-        const options = props.features[feature].map(item => {
+        const options = FEATURES[feature].map(item => {
           const itemHash = slugify(JSON.stringify(item));
 
           return <FeatureOption 
